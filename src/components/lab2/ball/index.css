@@ -1,0 +1,18 @@
+.result-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.ball {
+    border: 1px solid black;
+    border-radius: 50%;
+}
