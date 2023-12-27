@@ -1,5 +1,5 @@
-import {useEffect, useMemo, useState} from "react";
-import webJSON_data_url from '../../assets/web.json?url';
+    import {useEffect, useMemo, useState} from "react";
+import webJSON_data_url  from '@assets/web.json?url';
 
 const Footer = () => {
     const [fetchAuthor, setFetchAuthor] = useState<

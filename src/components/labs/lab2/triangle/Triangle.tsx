@@ -69,8 +69,8 @@
 
 import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
-import Footer from "../../footer/Footer";
-import Validation, { ValidationObject } from "../../../validation/validation";
+import Footer from "@components/footer/Footer";
+import Validation, { ValidationObject } from "@/validation/validation";
 
 
 

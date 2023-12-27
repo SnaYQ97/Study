@@ -1,8 +1,8 @@
 import {useLocation, useSearchParams} from "react-router-dom";
 import './index.css'
-import Footer from "../../footer/Footer";
-import {useEffect, useState} from "react";
-import Validation, {ValidationObject} from "../../../validation/validation";
+import Footer from "@components/footer/Footer";
+import {useEffect, useMemo, useState} from "react";
+import Validation, {ValidationObject} from "@/validation/validation";
 
 const Ball = () => {
     console.log('Ball');
@@ -30,27 +30,26 @@ const Ball = () => {
 
     console.log({radius});
 
+    const circleArea = useMemo(() => {
+        if (radius.isValid) {
+            return Math.PI * Math.pow(Number(radius.value), 2);
+        }
+        return null;
+    }, [radius]);
+
     return (
         <div style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'column', height: 'calc(100vh - 4rem )' }}>
             <div className="result-block">
                 {radius?.isValid ?
                     <>
-                        <div className="result">
-                            <span>Render:</span>
-                            <div className='ball' style={{
-                                display: 'block',
-                                width: `calc(2 * ${Number(radius.value)}cm)`,
-                                height: `calc(2 * ${Number(radius.value)}cm)`,
-                            }}/>
-                        </div>
                         <div className={'result'}>
                             <span>Area:</span>
-                            <div>{`${Math.PI * (Number(radius.value) * Number(radius.value)) }`} cm<sup><small>2</small></sup></div>
+                            <div>{circleArea} cm<sup><small>2</small></sup></div>
                         </div>
                     </>
                 :
                     <div className="errors">
-                        {radius.error}
+                        <b>Error:</b> {radius.error}
                     </div>
                 }
             </div>
