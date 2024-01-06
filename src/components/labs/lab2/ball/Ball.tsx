@@ -1,11 +1,10 @@
-import {useLocation, useSearchParams} from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import './index.css'
 import Footer from "@components/footer/Footer";
 import {useEffect, useMemo, useState} from "react";
-import Validation, {ValidationObject} from "@/validation/validation";
+import Validation, { ValidationObject } from "@/validation/validation";
 
 const Ball = () => {
-    console.log('Ball');
     const location = useLocation();
     const [searchParams] = useSearchParams(location.search);
     const radiusParam = searchParams.get('radius');
@@ -24,11 +23,8 @@ const Ball = () => {
             .isNumber('Parametr musi być liczbą. Proszę podać poprawną wartość numeryczną.')
             .isPositive('Parametr musi być dodatni. Proszę podać dodatnią wartość.')
             .getResult();
-        console.log({validatedRadius});
         setRadius(validatedRadius);
     }, [radiusParam]);
-
-    console.log({radius});
 
     const circleArea = useMemo(() => {
         if (radius.isValid) {

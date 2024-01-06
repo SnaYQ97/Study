@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 8080,
-    open: 'lab1/zadanie1'
+    open: '/'
   },
   resolve: {
     alias: {
