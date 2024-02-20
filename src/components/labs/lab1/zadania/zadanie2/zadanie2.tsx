@@ -1,5 +1,5 @@
 import './index.css'
-import { DateTime } from "luxon";
+import {DateTime} from "luxon";
 
 const Zadanie2 = () => {
     return (

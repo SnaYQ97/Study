@@ -6,7 +6,6 @@ const Lab1 = () => {
             <h1>Lab1</h1>
             <nav>
                 <Link className={'link'} to={"./zadanie1"}>Zadanie 1</Link>
-                <Link className={'link'} to={"./zadanie2"}>Zadanie 2</Link>
                 <Link className={'link'} to={"/"}>Labolatoria</Link>
             </nav>
         </>
